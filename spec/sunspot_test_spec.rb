@@ -30,7 +30,10 @@ describe SunspotTest do
 
   describe ".start_sunspot_server" do
     context "if server is already started" do
-      before(:each) { SunspotTest.server = true }
+      before(:each) {
+        SunspotTest.server = true
+        Net::HTTP.stub!(:get).and_return(true)
+      }
 
       it "does not try to spin up another server" do
         Kernel.should_not_receive(:fork)
@@ -45,6 +48,7 @@ describe SunspotTest do
 
       before(:each) do
         SunspotTest.server = nil
+        SunspotTest.instance_variable_set(:@running, false)
 
         fake_server = mock("server")
         SunspotTest.stub!(:server) { fake_server }
