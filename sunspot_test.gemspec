@@ -43,16 +43,16 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<substantial-sunspot_rails>, [">= 2.0.0.pre.111215"])
+      s.add_runtime_dependency(%q<sunspot_rails>, [">= 2.0.0.pre.111215"])
     else
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<substantial-sunspot_rails>, [">= 2.0.0.pre.111215"])
+      s.add_dependency(%q<sunspot_rails>, [">= 2.0.0.pre.111215"])
     end
   else
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<substantial-sunspot_rails>, [">= 2.0.0.pre.111215"])
+    s.add_dependency(%q<sunspot_rails>, [">= 2.0.0.pre.111215"])
   end
 end
 
